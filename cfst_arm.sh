@@ -16,7 +16,7 @@ tar -xzf cfst_linux_arm64.tar.gz
 
 echo "⚙️ Setting up permissions..."
 cd cfst_linux_arm64 && chmod +x cfst
-if [ -d "cfst" ] ; then
+if [ -d "~/cfst" ] ; then
     echo "✅ Installation finished successfully!"
 else
     echo "error!"
