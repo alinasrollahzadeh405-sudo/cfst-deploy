@@ -2,7 +2,7 @@
 
 install and deploy CloudflareSpeedTest to your server/local system with one click!
 
-### for temux, local terminal, and arm servers
+### for termux, local terminal, and arm servers
 
 ```bash
 bash <(curl -fsSL https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cfst-deploy/main/cfst_arm.sh)
