@@ -3,7 +3,7 @@
 echo "🚀 Starting CFST setup..."
 
 echo "📦 Updating packages and installing dependencies..."
-pkg update && pkg upgrade -y && pkg install wget tar -y
+apt update && apt upgrade -y && apt install wget tar -y
 
 echo "📁 Creating and entering 'cfst' directory..."
 mkdir -p cfst && cd cfst
@@ -16,5 +16,8 @@ tar -xzf cfst_linux_arm64.tar.gz
 
 echo "⚙️ Setting up permissions..."
 cd cfst_linux_arm64 && chmod +x cfst
-
-echo "✅ Installation finished successfully!"
+if [ -d "cfst" ] ; then
+    echo "✅ Installation finished successfully!"
+else
+    echo "error!"
+fi
