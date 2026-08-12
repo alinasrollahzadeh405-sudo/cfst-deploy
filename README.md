@@ -1,3 +1,7 @@
+### فارسی
+
+[ریدمی فارسی](https://github.com/alinasrollahzadeh405-sudo/cfst-deploy/blob/main/README.FA.md)
+
 ### cfst-deploy
 
 install and deploy CloudflareSpeedTest to your server/local system with one click!
