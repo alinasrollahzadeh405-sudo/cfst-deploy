@@ -1,4 +1,4 @@
-###cfst-deploy
+### cfst-deploy
 
 با یک کلیک CloudflareSpeedTest را روی سرور/سیستم محلی خود نصب و مستقر کنید!
 
