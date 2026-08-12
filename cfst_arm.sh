@@ -9,7 +9,7 @@ echo "📁 Creating and entering 'cfst' directory..."
 mkdir -p cfst && cd cfst
 
 echo "⬇️ Downloading CloudflareSpeedTest for ARM64..."
-wget -N https://github.com/XIU2/CloudflareSpeedTest/releases/download/v2.3.5/cfst_linux_arm64.tar.gz
+wget -N https://github.com/XIU2/CloudflareSpeedTest/releases/latest/download/cfst_linux_arm64.tar.gz
 
 echo "📦 Extracting the package..."
 tar -xzf cfst_linux_arm64.tar.gz
