@@ -8,7 +8,7 @@ install and deploy CloudflareSpeedTest to your server/local system with one clic
 
 ### importent!
 
-only run this scanner to your local system! not your server!
+Do not run this scanner on your server! Otherwise, your server might be flagged, filtered, or blocked by the datacenter!
 
 ### quick install
 
