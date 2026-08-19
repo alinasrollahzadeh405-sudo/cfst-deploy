@@ -27,6 +27,6 @@ echo "📦 Extracting the package..."
 tar -xzf cfst_linux_${arch}.tar.gz
 
 echo "⚙️ Setting up permissions..."
-cd cfst_linux_${arch} && chmod +x cfst && curl -s -o scan.sh "https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cfst-deploy/main/install.sh" && chmod +x scan.sh
+cd cfst_linux_${arch} && chmod +x cfst && curl -s -o scan.sh "https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cfst-deploy/main/scan.sh" && chmod +x scan.sh
 
 echo "✅ Installation finished successfully!"
