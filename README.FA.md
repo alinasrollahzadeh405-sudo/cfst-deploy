@@ -1,22 +1,45 @@
 ### cfst-deploy
 
-با یک کلیک CloudflareSpeedTest را روی سرور/سیستم محلی خود نصب و مستقر کنید!
+با یک کلیک CloudflareSpeedTest را روی سرور/سیستم محلی خود نصب و مستقر کنید همراه با یک منوی تعاملی برای اسکنر CloudflareSpeedTest!
 
-### برای termux، ترمینالهای محلی، و سرورهای arm
+### مهم!
+
+این اسکنر را فقط روی سیستم محلیتان اجرا کنید! اگر روی سرورتان اجرا کنید، ممکن است سرورتان فلگ، فیلتر یا توسط دیتاسنتر مسدود شود!
+
+### نصب سریع
+
+برای نصب، از این دستور استفاده کنید
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cfst-deploy/main/cfst_arm.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cfst-deploy/main/install.sh)
+```
+
+### چگونه اسکن کنیم؟
+
+### ۱: تغییر دایرکتوری به cfst
+
+برای تغییر دایرکتوری از این دستور استفاده کنید.
+
+```bash
+arch=$(uname -m)
+    if [ "$arch" = "x86_64" ] ; then
+    arch="amd64"
+    elif [ "$arch = "arch64 " ] ; then
+arch="arm64"
+fi
+cd cfst/cfst_linux_${arch}
+```
+
+### ۲: با این دستور اسکنر را اجرا کنید.
+
+```bash
+bash scan.sh
 ```
 
 ### برای termux، قبل از اجرا این دستور را بزنید
 
 ```bash
 pkg update && pkg upgrade -y && pkg install proot-distro -y && proot-distro install ubuntu && proot-distro login ubuntu
-```
-
-### برای pc و اکثر سرورها
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cfst-deploy/main/cfst_amd.sh)
 ```
 
 ### تشکر ویژه از
