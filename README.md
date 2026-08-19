@@ -4,24 +4,46 @@
 
 ### cfst-deploy
 
-install and deploy CloudflareSpeedTest to your server/local system with one click!
+install and deploy CloudflareSpeedTest to your server/local system with one click and interactive scanner for CloudflareSpeedTest!
 
-### for termux, local terminal, and arm servers
+### importent!
+
+only run this scanner to your local system! not your server!### quick install
+
+to install, use this command:
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cfst-deploy/main/cfst_arm.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cfst-deploy/main/install.sh)
+```
+
+### how to scan?
+
+### 1: change directory to cfst
+
+enter this command:
+
+```bash
+arch=$(uname -m)
+    if [ "$arch" = "x86_64" ] ; then
+    arch="amd64"
+    elif [ "$arch = "arch64 " ] ; then
+arch="arm64"
+fi
+cd cfst/cfst_linux_${arch}
+```
+
+### 2: run scanner
+
+enter this command to run interactive scanner
+
+```bash
+bash scan.sh
 ```
 
 ### for termux, use this command before executing:
 
 ```bash
 pkg update && pkg upgrade -y && pkg install proot-distro -y && proot-distro install ubuntu && proot-distro login ubuntu
-```
-
-### for pc and Most servers
-
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cfst-deploy/main/cfst_amd.sh)
 ```
 
 ### special thanks
