@@ -24,7 +24,7 @@ bash <(curl -fsSL https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cf
 arch=$(uname -m)
     if [ "$arch" = "x86_64" ] ; then
     arch="amd64"
-    elif [ "$arch" = "aarch64 " ] ; then
+    elif [ "$arch" = "aarch64" ] ; then
 arch="arm64"
 fi
 cd cfst/cfst_linux_${arch}
