@@ -8,7 +8,7 @@ install and deploy CloudflareSpeedTest to your server/local system with one clic
 
 ### importent!
 
-Do not run this scanner on your server! Otherwise, your server might be flagged, filtered, or blocked by the datacenter!
+If you are running this scanner on your VPS, make sure to lower the number of threads to prevent your server from being suspended by the datacenter.
 
 ### quick install
 
