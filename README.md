@@ -18,17 +18,44 @@ Install and deploy CloudflareSpeedTest to your server or local system with an in
 bash <(curl -fsSL https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cfst-deploy/main/install.sh)
 ```
 
+### Supported Linux architectures
+
+The installer detects `uname -m` and downloads the matching official asset from [CloudflareSpeedTest Releases](https://github.com/XIU2/CloudflareSpeedTest/releases):
+
+| System architecture | Release asset |
+| --- | --- |
+| x86 / 32-bit | `cfst_linux_386.tar.gz` |
+| x86_64 / amd64 | `cfst_linux_amd64.tar.gz` |
+| ARM v5 | `cfst_linux_armv5.tar.gz` |
+| ARM v6 | `cfst_linux_armv6.tar.gz` |
+| ARM v7 | `cfst_linux_armv7.tar.gz` |
+| ARM v8 / AArch64 | `cfst_linux_arm64.tar.gz` |
+| MIPS | `cfst_linux_mips.tar.gz` |
+| MIPS64 | `cfst_linux_mips64.tar.gz` |
+| MIPS little-endian | `cfst_linux_mipsle.tar.gz` |
+| MIPS64 little-endian | `cfst_linux_mips64le.tar.gz` |
+
+The installer maps common machine names such as `x86_64`, `i686`, `aarch64`, `armv7l`, `mips`, and `mipsel` to the official asset names.
+
 ### Run the scanner
 
-After installation, go to the cfst directory:
+After installation, go to the correct CFST directory:
 
 ```bash
 arch=$(uname -m)
-if [ "$arch" = "x86_64" ]; then
-    arch="amd64"
-elif [ "$arch" = "aarch64" ] || [ "$arch" = "arm64" ]; then
-    arch="arm64"
-fi
+case "$arch" in
+    x86_64|amd64) arch="amd64" ;;
+    i386|i486|i586|i686) arch="386" ;;
+    aarch64|arm64) arch="arm64" ;;
+    armv5*|arm5*) arch="armv5" ;;
+    armv6*|arm6*) arch="armv6" ;;
+    armv7*|arm7*) arch="armv7" ;;
+    mips64el) arch="mips64le" ;;
+    mips64) arch="mips64" ;;
+    mipsel) arch="mipsle" ;;
+    mips) arch="mips" ;;
+    *) echo "Unsupported architecture: $arch"; exit 1 ;;
+esac
 cd cfst/cfst_linux_${arch}
 ```
 
