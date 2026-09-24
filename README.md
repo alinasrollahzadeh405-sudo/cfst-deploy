@@ -1,7 +1,3 @@
-### فارسی
-
-[ریدمی فارسی](https://github.com/alinasrollahzadeh405-sudo/cfst-deploy/blob/main/README.FA.md)
-
 ### cfst-deploy
 
 Install and deploy CloudflareSpeedTest to your server or local system with an interactive scanner.
@@ -24,7 +20,19 @@ bash <(curl -fsSL https://raw.githubusercontent.com/alinasrollahzadeh405-sudo/cf
 
 ### Run the scanner
 
-After installation, enter the CloudflareSpeedTest directory and run:
+After installation, go to the cfst directory:
+
+```bash
+arch=$(uname -m)
+if [ "$arch" = "x86_64" ]; then
+    arch="amd64"
+elif [ "$arch" = "aarch64" ] || [ "$arch" = "arm64" ]; then
+    arch="arm64"
+fi
+cd cfst/cfst_linux_${arch}
+```
+
+Then run:
 
 ```bash
 bash scan.sh
